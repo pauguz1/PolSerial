@@ -86,5 +86,14 @@
   <ItemGroup>
     <None Include="Resources\icon menos 32px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-menú-filled-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon Eliminar 35px rojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon Eliminar 35px rojo 3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

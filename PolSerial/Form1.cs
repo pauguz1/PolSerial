@@ -26,5 +26,36 @@ namespace PolSerial
         {
             WindowState = FormWindowState.Minimized;
         }
+       
+        /*
+         * boton para cambiar entre las ventana de inicio y configuracion
+         */
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedTab == ventanaInicio)
+            {
+                tabControl1.SelectedTab = VentanaConfiguracion;
+                toolTip1.SetToolTip(this.pictureBox3, "Mostrar inicio");
+            }
+            else
+            {
+                tabControl1.SelectedTab = ventanaInicio;
+                toolTip1.SetToolTip(this.pictureBox3, "Mostrar configuracion");
+            }
+        }
+        int mousey, mousex;
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                mousex = e.X;
+                mousey = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - mousex);
+                Top = Top + (e.Y - mousey);
+            }
+        }
     }
 }

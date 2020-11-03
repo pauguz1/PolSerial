@@ -73,9 +73,39 @@ namespace PolSerial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon_Eliminar_35px_rojo {
+            get {
+                object obj = ResourceManager.GetObject("Icon Eliminar 35px rojo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_Eliminar_35px_rojo_3 {
+            get {
+                object obj = ResourceManager.GetObject("Icon Eliminar 35px rojo 3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_menos_32px {
             get {
                 object obj = ResourceManager.GetObject("icon menos 32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_menú_filled_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-menú-filled-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
