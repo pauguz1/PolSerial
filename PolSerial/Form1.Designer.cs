@@ -72,7 +72,7 @@
             this.tabControl1.Location = new System.Drawing.Point(-5, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(662, 431);
+            this.tabControl1.Size = new System.Drawing.Size(660, 436);
             this.tabControl1.TabIndex = 0;
             // 
             // ventanaInicio
@@ -93,7 +93,7 @@
             this.ventanaInicio.Location = new System.Drawing.Point(4, 25);
             this.ventanaInicio.Name = "ventanaInicio";
             this.ventanaInicio.Padding = new System.Windows.Forms.Padding(3);
-            this.ventanaInicio.Size = new System.Drawing.Size(654, 402);
+            this.ventanaInicio.Size = new System.Drawing.Size(652, 407);
             this.ventanaInicio.TabIndex = 0;
             this.ventanaInicio.Text = "inicio";
             // 
@@ -102,11 +102,11 @@
             this.checkBox4.AutoSize = true;
             this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox4.Location = new System.Drawing.Point(464, 161);
+            this.checkBox4.Location = new System.Drawing.Point(520, 165);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(152, 33);
+            this.checkBox4.Size = new System.Drawing.Size(89, 33);
             this.checkBox4.TabIndex = 11;
-            this.checkBox4.Text = "checkBox4";
+            this.checkBox4.Text = "Led4";
             this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // checkBox3
@@ -114,11 +114,11 @@
             this.checkBox3.AutoSize = true;
             this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox3.Location = new System.Drawing.Point(464, 120);
+            this.checkBox3.Location = new System.Drawing.Point(520, 124);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(152, 33);
+            this.checkBox3.Size = new System.Drawing.Size(89, 33);
             this.checkBox3.TabIndex = 10;
-            this.checkBox3.Text = "checkBox3";
+            this.checkBox3.Text = "Led3";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // checkBox2
@@ -126,11 +126,11 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox2.Location = new System.Drawing.Point(464, 81);
+            this.checkBox2.Location = new System.Drawing.Point(520, 85);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(152, 33);
+            this.checkBox2.Size = new System.Drawing.Size(89, 33);
             this.checkBox2.TabIndex = 9;
-            this.checkBox2.Text = "checkBox2";
+            this.checkBox2.Text = "Led2";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // checkBox1
@@ -138,11 +138,11 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox1.Location = new System.Drawing.Point(464, 42);
+            this.checkBox1.Location = new System.Drawing.Point(520, 46);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(152, 33);
+            this.checkBox1.Size = new System.Drawing.Size(89, 33);
             this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.Text = "Led1";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // label4
@@ -200,7 +200,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(110, 50);
             this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
+            this.button4.Text = "boton4";
             this.button4.UseVisualStyleBackColor = false;
             // 
             // button3
@@ -214,7 +214,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(110, 50);
             this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
+            this.button3.Text = "boton3";
             this.button3.UseVisualStyleBackColor = false;
             // 
             // button2
@@ -228,7 +228,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 50);
             this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
+            this.button2.Text = "boton2";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // button1
@@ -242,8 +242,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 50);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "boton1";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // VentanaConfiguracion
             // 
@@ -254,7 +255,7 @@
             this.VentanaConfiguracion.Location = new System.Drawing.Point(4, 25);
             this.VentanaConfiguracion.Name = "VentanaConfiguracion";
             this.VentanaConfiguracion.Padding = new System.Windows.Forms.Padding(3);
-            this.VentanaConfiguracion.Size = new System.Drawing.Size(654, 402);
+            this.VentanaConfiguracion.Size = new System.Drawing.Size(1568, 860);
             this.VentanaConfiguracion.TabIndex = 1;
             this.VentanaConfiguracion.Text = "configuracion";
             this.VentanaConfiguracion.UseVisualStyleBackColor = true;
@@ -273,11 +274,17 @@
             "38400",
             "57600",
             "74880",
-            "115200"});
+            "115200",
+            "230400",
+            "250000",
+            "500000",
+            "1000000",
+            "2000000"});
             this.comboBox2.Location = new System.Drawing.Point(16, 155);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(173, 30);
             this.comboBox2.TabIndex = 3;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -297,6 +304,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(173, 30);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -318,7 +326,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(653, 36);
+            this.panel1.Size = new System.Drawing.Size(644, 35);
             this.panel1.TabIndex = 1;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
@@ -338,7 +346,7 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::PolSerial.Properties.Resources.icon_menos_32px;
-            this.pictureBox2.Location = new System.Drawing.Point(585, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(573, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(31, 31);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -351,7 +359,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::PolSerial.Properties.Resources.Icon_Eliminar_35px;
-            this.pictureBox1.Location = new System.Drawing.Point(617, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(608, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(28, 28);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -364,7 +372,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 424);
+            this.ClientSize = new System.Drawing.Size(642, 427);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
