@@ -39,11 +39,16 @@ namespace PolSerial
                 }
             }
         }
+        /*
+         * este metodo es para salir de la aplicacion
+         */
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+        /*
+         * este metodo es para minimizar la ventana
+         */
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
@@ -67,11 +72,14 @@ namespace PolSerial
             }
         }
         int mousey, mousex;
-
+        /*
+         * este metodo es para cuando seleccionamos un puerto serial
+         */
         private async void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(await Controlador1.SetPuertoSeleccionado(comboBox1.Text))
             {
+                tabControl1.SelectedTab = ventanaInicio;
                 MessageBox.Show("Puerto Seleciconado correctamente");
             }
             else
@@ -79,7 +87,9 @@ namespace PolSerial
                 MessageBox.Show("Error al seleccionar puerto");
             }
         }
-
+        /*
+         * este metodo es para cuando seleccionamos la velocidad de comunicacion del puerto serial
+         */
         private async void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(await Controlador1.SetBaudiosSeleccionado(Convert.ToInt32(comboBox2.Text)))
@@ -92,15 +102,102 @@ namespace PolSerial
                 MessageBox.Show("Error al seleccionar Velocidad");
             }
         }
-
+        /*
+         * Este metodo envia el dato de que el boton 1 fue presionado
+         */
         private async void button1_Click(object sender, EventArgs e)
         {
-            if( await Controlador1.enviarDato("ha"))
+            if (await Controlador1.enviarDato("btn1click"))
+            {
+
+            }
+           /* if (!checkBox1.Enabled)
+            {
+                checkBox1.Enabled = true;
+                //checkBox1.CheckState = CheckState.Checked;// asi es como ponemos un checkbox en checdo
+            }
+            else
+            {
+                checkBox1.Enabled = false;
+            }*/
+        }
+
+        private async void button2_Click(object sender, EventArgs e)
+        {
+            if (await Controlador1.enviarDato("btn2click"))
             {
 
             }
         }
 
+        private async void button3_Click(object sender, EventArgs e)
+        {
+            if (await Controlador1.enviarDato("btn3click"))
+            {
+
+            }
+        }
+        /*
+         * 
+         * Este metodo envia un dato por el puerto serial que indica que el boton fue presionado
+         */
+        private async void button4_Click(object sender, EventArgs e)
+        {
+            if (await Controlador1.enviarDato("btn4click"))
+            {
+
+            }
+        }
+
+        private  void timer1_Tick(object sender, EventArgs e)
+        {
+            string datos= Controlador1.datosRecividos;
+            //label1.Text = datos;
+            if (datos == null)
+            {
+
+            }
+            else if (datos.Contains("led1On"))
+            {
+                checkBox1.CheckState = CheckState.Checked;
+            }
+            else if (datos.Contains("led2On"))
+            {
+                checkBox2.CheckState = CheckState.Checked;
+            }
+            else if (datos.Contains("led3On"))
+            {
+                checkBox3.CheckState = CheckState.Checked;
+            }
+            else if (datos.Contains("led4On"))
+            {
+                checkBox4.CheckState = CheckState.Checked;
+            }//-----------------------
+            else if (datos.Contains("led1Off"))
+            {
+                checkBox1.CheckState = CheckState.Unchecked;
+            }
+            else if (datos.Contains("led2Off"))
+            {
+                checkBox2.CheckState = CheckState.Unchecked;
+            }
+            else if (datos.Contains("led3Off"))
+            {
+                checkBox3.CheckState = CheckState.Unchecked;
+            }
+            else if (datos.Contains("led4Off"))
+            {
+                checkBox4.CheckState = CheckState.Unchecked;
+            }
+            else
+            {
+               // MessageBox.Show(datos);
+            }
+        }
+
+        /*
+         * este metodo es para cuando el usuario quiere mover la ventana de posicion 
+         */
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left)

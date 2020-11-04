@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO.Ports;// libreria para el puerto Serial
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -11,10 +12,18 @@ namespace PolSerial.Control
     class Controlador
     {
         SerialPort serial = new SerialPort();
+       public string datosRecividos;
         public Controlador()
         {
-            
+            serial.DataReceived += Serial_DataReceived;// evento para detectar cuando un dato es recivido
         }
+
+        private async void Serial_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+           datosRecividos= await obtenerDatosRecividos();
+            //Thread.Sleep(5000);
+        }
+        
         public async Task<List<string>> GetListaPuertos()
         {
             // Nota se debe encerrar todo en el return await Task.Run(() =>{  /* codigo  */
@@ -97,6 +106,28 @@ namespace PolSerial.Control
                     MessageBox.Show("el mensaje no fue enviado");
                 }
                 return bandera;
+            });
+        }
+        public async Task<string> obtenerDatosRecividos()
+        {
+            // Nota se debe encerrar todo en el return await Task.Run(() =>{  /* codigo  */
+            return await Task.Run(() =>
+            {
+
+                string datosRecividos1="";
+                try
+                {
+                    if (serial.IsOpen)
+                    {
+                        datosRecividos1 = serial.ReadLine();
+                    }
+                    
+                }
+                catch
+                {
+
+                }
+                return datosRecividos1;
             });
         }
     }

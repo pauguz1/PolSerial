@@ -53,6 +53,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.ventanaInicio.SuspendLayout();
             this.VentanaConfiguracion.SuspendLayout();
@@ -202,6 +203,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "boton4";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -216,6 +218,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "boton3";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -230,6 +233,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "boton2";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -255,7 +259,7 @@
             this.VentanaConfiguracion.Location = new System.Drawing.Point(4, 25);
             this.VentanaConfiguracion.Name = "VentanaConfiguracion";
             this.VentanaConfiguracion.Padding = new System.Windows.Forms.Padding(3);
-            this.VentanaConfiguracion.Size = new System.Drawing.Size(1568, 860);
+            this.VentanaConfiguracion.Size = new System.Drawing.Size(652, 407);
             this.VentanaConfiguracion.TabIndex = 1;
             this.VentanaConfiguracion.Text = "configuracion";
             this.VentanaConfiguracion.UseVisualStyleBackColor = true;
@@ -368,6 +372,12 @@
             this.toolTip1.SetToolTip(this.pictureBox1, "Cerrar ");
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 40;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -418,6 +428,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
