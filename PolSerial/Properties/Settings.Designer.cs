@@ -25,13 +25,25 @@ namespace PolSerial.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\"9600\"")]
         public string velocidad {
             get {
                 return ((string)(this["velocidad"]));
             }
             set {
                 this["velocidad"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\"false\"")]
+        public string modoOscuro {
+            get {
+                return ((string)(this["modoOscuro"]));
+            }
+            set {
+                this["modoOscuro"] = value;
             }
         }
     }

@@ -63,6 +63,36 @@ namespace PolSerial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon_actualizar_35px {
+            get {
+                object obj = ResourceManager.GetObject("Icon actualizar 35px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_CircleGreen35px {
+            get {
+                object obj = ResourceManager.GetObject("Icon_CircleGreen35px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_CircleWhite35px {
+            get {
+                object obj = ResourceManager.GetObject("Icon_CircleWhite35px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icon_Eliminar_35px {
             get {
                 object obj = ResourceManager.GetObject("Icon Eliminar 35px", resourceCulture);
@@ -96,6 +126,36 @@ namespace PolSerial.Properties {
         internal static System.Drawing.Bitmap icon_menos_32px {
             get {
                 object obj = ResourceManager.GetObject("icon menos 32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_OffLed25px {
+            get {
+                object obj = ResourceManager.GetObject("Icon_OffLed25px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_OnLed35px {
+            get {
+                object obj = ResourceManager.GetObject("Icon_OnLed35px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_OnLed35px1 {
+            get {
+                object obj = ResourceManager.GetObject("Icon_OnLed35px1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

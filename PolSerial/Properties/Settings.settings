@@ -3,7 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="velocidad" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">"9600"</Value>
+    </Setting>
+    <Setting Name="modoOscuro" Type="System.String" Scope="User">
+      <Value Profile="(Default)">"false"</Value>
     </Setting>
   </Settings>
 </SettingsFile>

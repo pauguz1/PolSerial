@@ -11,16 +11,18 @@ namespace PolSerial.Control
 {
     class Controlador
     {
-        SerialPort serial = new SerialPort();
-       public string datosRecividos;
+       public SerialPort serial = new SerialPort();
+       //public string datosRecividos;
         public Controlador()
         {
             serial.DataReceived += Serial_DataReceived;// evento para detectar cuando un dato es recivido
+            serial.WriteTimeout = 1;
+            serial.ReadTimeout = 1;
         }
 
-        private async void Serial_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        private void Serial_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-           datosRecividos= await obtenerDatosRecividos();
+           //datosRecividos= await obtenerDatosRecividos();
             //Thread.Sleep(5000);
         }
         

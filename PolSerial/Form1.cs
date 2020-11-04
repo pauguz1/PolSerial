@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,7 +18,16 @@ namespace PolSerial
         {
             InitializeComponent();
             obtenerPuertos();
-            
+            if (Properties.Settings.Default["modoOscuro"].ToString() == "true")
+            {
+                modoOscuro(true);
+                zeroitSwitchThematic1.Checked = true;
+            }
+            else
+            {
+                modoOscuro(false);
+                zeroitSwitchThematic1.Checked = false;
+            }
         }
         /*
          * Este metodo Muestra la lista de Puertos COM disponibles
@@ -26,6 +36,7 @@ namespace PolSerial
         async void obtenerPuertos()
         {
             comboBox1.Items.Clear();
+            
             foreach (string puerto in await Controlador1.GetListaPuertos())
             {
                 comboBox1.Items.Add(puerto);
@@ -37,6 +48,41 @@ namespace PolSerial
                 {
                     MessageBox.Show("Error al seleccionar Velocidad");
                 }
+            }
+        }
+        void modoOscuro(bool modo)
+        {
+            if (modo)
+            {
+                ventanaInicio.BackColor = Color.FromArgb(27, 33, 39);
+                VentanaConfiguracion.BackColor= Color.FromArgb(27, 33, 39);
+                label1.ForeColor = Color.White;
+                label2.ForeColor = Color.White;
+                label3.ForeColor = Color.White;
+                label4.ForeColor = Color.White;
+                label5.ForeColor = Color.White;
+                label6.ForeColor = Color.White;
+                label7.ForeColor = Color.White;
+                label8.ForeColor = Color.White;
+                label9.ForeColor = Color.White;
+                label10.ForeColor = Color.White;
+                label11.ForeColor = Color.White;
+            }
+            else
+            {
+                ventanaInicio.BackColor = Color.Transparent;
+                VentanaConfiguracion.BackColor = Color.Transparent;
+                label1.ForeColor = Color.Black;
+                label2.ForeColor = Color.Black;
+                label3.ForeColor = Color.Black;
+                label4.ForeColor = Color.Black;
+                label5.ForeColor = Color.Black;
+                label6.ForeColor = Color.Black;
+                label7.ForeColor = Color.Black;
+                label8.ForeColor = Color.Black;
+                label9.ForeColor = Color.Black;
+                label10.ForeColor = Color.Black;
+                label11.ForeColor = Color.Black;
             }
         }
         /*
@@ -149,50 +195,96 @@ namespace PolSerial
             }
         }
 
-        private  void timer1_Tick(object sender, EventArgs e)
+        private async  void timer1_Tick(object sender, EventArgs e)
         {
-            string datos= Controlador1.datosRecividos;
-            //label1.Text = datos;
-            if (datos == null)
+            if (Controlador1.serial.IsOpen)
             {
+                //string datos= Controlador1.datosRecividos;
+                string datos = await Controlador1.obtenerDatosRecividos();
+                //button1.Text = datos;
+                if (datos == null)
+                {
 
+                }
+                else if (datos.Contains("led1On"))
+                {
+                    pictureBox5.Image = PolSerial.Properties.Resources.Icon_CircleGreen35px;
+                }
+                else if (datos.Contains("led2On"))
+                {
+                    pictureBox6.Image = PolSerial.Properties.Resources.Icon_CircleGreen35px;
+                }
+                else if (datos.Contains("led3On"))
+                {
+                    pictureBox7.Image = PolSerial.Properties.Resources.Icon_CircleGreen35px;
+                }
+                else if (datos.Contains("led4On"))
+                {
+                    pictureBox8.Image = PolSerial.Properties.Resources.Icon_CircleGreen35px;
+                }//----------------------- Apagado de LED
+                else if (datos.Contains("led1Off"))
+                {
+                    pictureBox5.Image = PolSerial.Properties.Resources.Icon_CircleWhite35px;
+                }
+                else if (datos.Contains("led2Off"))
+                {
+                    pictureBox6.Image = PolSerial.Properties.Resources.Icon_CircleWhite35px;
+                }
+                else if (datos.Contains("led3Off"))
+                {
+                    pictureBox7.Image = PolSerial.Properties.Resources.Icon_CircleWhite35px;
+                }
+                else if (datos.Contains("led4Off"))
+                {
+                    pictureBox8.Image = PolSerial.Properties.Resources.Icon_CircleWhite35px;
+                }
+                else if (datos != "")
+                {
+                    // MessageBox.Show(datos);
+                    string[] datosSeparados;
+                    try
+                    {
+                        if (Controlador1.serial.IsOpen)
+                        {
+                            datosSeparados = datos.Split(',');
+                            label1.Text = datosSeparados[0];
+                            label2.Text = datosSeparados[1];
+                            label3.Text = datosSeparados[2];
+                            label4.Text = datosSeparados[3];
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+
+                }
             }
-            else if (datos.Contains("led1On"))
+        }
+        /*
+         * switch para manejar el modo oscuro
+         */
+        private void zeroitSwitchThematic1_Click(object sender, EventArgs e)
+        {
+            if (zeroitSwitchThematic1.Checked)// si esta activada 
             {
-                checkBox1.CheckState = CheckState.Checked;
-            }
-            else if (datos.Contains("led2On"))
-            {
-                checkBox2.CheckState = CheckState.Checked;
-            }
-            else if (datos.Contains("led3On"))
-            {
-                checkBox3.CheckState = CheckState.Checked;
-            }
-            else if (datos.Contains("led4On"))
-            {
-                checkBox4.CheckState = CheckState.Checked;
-            }//-----------------------
-            else if (datos.Contains("led1Off"))
-            {
-                checkBox1.CheckState = CheckState.Unchecked;
-            }
-            else if (datos.Contains("led2Off"))
-            {
-                checkBox2.CheckState = CheckState.Unchecked;
-            }
-            else if (datos.Contains("led3Off"))
-            {
-                checkBox3.CheckState = CheckState.Unchecked;
-            }
-            else if (datos.Contains("led4Off"))
-            {
-                checkBox4.CheckState = CheckState.Unchecked;
+                modoOscuro(true);
+                Properties.Settings.Default["modoOscuro"] = "true";
+                Properties.Settings.Default.Save();
             }
             else
             {
-               // MessageBox.Show(datos);
+                modoOscuro(false);
+                Properties.Settings.Default["modoOscuro"] = "false";
+                Properties.Settings.Default.Save();
             }
+        }
+        /*
+         * actualizar los puertos en el combobox
+         */
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            obtenerPuertos();
         }
 
         /*
