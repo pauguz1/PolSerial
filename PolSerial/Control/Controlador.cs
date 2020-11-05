@@ -99,13 +99,13 @@ namespace PolSerial.Control
                     }
                     else
                     {
-                        MessageBox.Show("Debes seleccionar un Puerto");
+                       // MessageBox.Show("Debes seleccionar un Puerto");
                     }
                 }
                 catch (Exception)
                 {
                     bandera = false;
-                    MessageBox.Show("el mensaje no fue enviado");
+                   // MessageBox.Show("el mensaje no fue enviado");
                 }
                 return bandera;
             });

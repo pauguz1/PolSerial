@@ -67,6 +67,8 @@ namespace PolSerial
                 label9.ForeColor = Color.White;
                 label10.ForeColor = Color.White;
                 label11.ForeColor = Color.White;
+                label12.ForeColor = Color.White;
+                linkLabel1.LinkColor = Color.White;
             }
             else
             {
@@ -83,6 +85,8 @@ namespace PolSerial
                 label9.ForeColor = Color.Black;
                 label10.ForeColor = Color.Black;
                 label11.ForeColor = Color.Black;
+                label12.ForeColor = Color.Black;
+                linkLabel1.LinkColor = Color.Black;
             }
         }
         /*
@@ -126,11 +130,26 @@ namespace PolSerial
             if(await Controlador1.SetPuertoSeleccionado(comboBox1.Text))
             {
                 tabControl1.SelectedTab = ventanaInicio;
+                validarConexionSerial();
+                await Controlador1.enviarDato("mostrarNombreBoton");
                 MessageBox.Show("Puerto Seleciconado correctamente");
             }
             else
             {
                 MessageBox.Show("Error al seleccionar puerto");
+            }
+        }
+        void validarConexionSerial()
+        {
+            if (Controlador1.serial.IsOpen)
+            {
+                zeroitSwitchThematic2.Checked = true;//Mostramos el switch com Activado 
+                zeroitSwitchThematic2.Enabled = true;
+            }
+            else
+            {
+                zeroitSwitchThematic2.Checked = false;//Mostramos el switch com Activado 
+                zeroitSwitchThematic2.Enabled = false;
             }
         }
         /*
@@ -153,9 +172,21 @@ namespace PolSerial
          */
         private async void button1_Click(object sender, EventArgs e)
         {
-            if (await Controlador1.enviarDato("btn1click"))
+            if (Controlador1.serial.IsOpen)
             {
+                if (await Controlador1.enviarDato("btn1click"))
+                {
 
+                }
+                else
+                {
+                    MessageBox.Show("el mensaje no fue enviado");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debes seleccionar un puerto");
+                validarConexionSerial();
             }
            /* if (!checkBox1.Enabled)
             {
@@ -170,18 +201,44 @@ namespace PolSerial
 
         private async void button2_Click(object sender, EventArgs e)
         {
-            if (await Controlador1.enviarDato("btn2click"))
+            if (Controlador1.serial.IsOpen)
             {
+                if (await Controlador1.enviarDato("btn2click"))
+                {
 
+                }
+                else
+                {
+                    MessageBox.Show("el mensaje no fue enviado");
+                }
             }
+            else
+            {
+                validarConexionSerial();
+                MessageBox.Show("Debes seleccionar un puerto");
+            }
+            
         }
 
         private async void button3_Click(object sender, EventArgs e)
         {
-            if (await Controlador1.enviarDato("btn3click"))
+            if (Controlador1.serial.IsOpen)
             {
+                if (await Controlador1.enviarDato("btn3click"))
+                {
 
+                }
+                else
+                {
+                    MessageBox.Show("el mensaje no fue enviado");
+                }
             }
+            else
+            {
+                validarConexionSerial();
+                MessageBox.Show("Debes seleccionar un puerto");
+            }
+            
         }
         /*
          * 
@@ -189,10 +246,23 @@ namespace PolSerial
          */
         private async void button4_Click(object sender, EventArgs e)
         {
-            if (await Controlador1.enviarDato("btn4click"))
+            if (Controlador1.serial.IsOpen)
             {
+                if (await Controlador1.enviarDato("btn4click"))
+                {
 
+                }
+                else
+                {
+                    MessageBox.Show("el mensaje no fue enviado");
+                }
             }
+            else
+            {
+                validarConexionSerial();
+                MessageBox.Show("Debes seleccionar un puerto");
+            }
+            
         }
 
         private async  void timer1_Tick(object sender, EventArgs e)
@@ -206,7 +276,7 @@ namespace PolSerial
                 {
 
                 }
-                else if (datos.Contains("led1On"))
+                else if (datos.Contains("led1On"))//------------------------------------ Encendido del led
                 {
                     pictureBox5.Image = PolSerial.Properties.Resources.Icon_CircleGreen35px;
                 }
@@ -221,7 +291,7 @@ namespace PolSerial
                 else if (datos.Contains("led4On"))
                 {
                     pictureBox8.Image = PolSerial.Properties.Resources.Icon_CircleGreen35px;
-                }//----------------------- Apagado de LED
+                }//---------------------------------------------------------------------------   Apagado de LED
                 else if (datos.Contains("led1Off"))
                 {
                     pictureBox5.Image = PolSerial.Properties.Resources.Icon_CircleWhite35px;
@@ -237,11 +307,53 @@ namespace PolSerial
                 else if (datos.Contains("led4Off"))
                 {
                     pictureBox8.Image = PolSerial.Properties.Resources.Icon_CircleWhite35px;
+                }else if (datos.Contains("btn1txt"))//------------------------------------------ Cambio del texto en los botones
+                {
+                    string b = datos.Replace("btn1txt", "");
+                    button1.Text = b;
+                }
+                else if (datos.Contains("btn2txt"))
+                {
+                    string b = datos.Replace("btn2txt", "");
+                    button2.Text = b;
+                }
+                else if (datos.Contains("btn3txt"))
+                {
+                    string b = datos.Replace("btn3txt", "");
+                    button3.Text = b;
+                }
+                else if (datos.Contains("btn4txt"))
+                {
+                    string b = datos.Replace("btn4txt", "");
+                    button4.Text = b;
+                }
+                else if (datos.Contains("etiqueta1"))
+                {
+                    string b = datos.Replace("etiqueta1", "");
+                    label1.Text = b;
+                }
+                else if (datos.Contains("etiqueta2"))
+                {
+                    string b = datos.Replace("etiqueta2", "");
+                    label2.Text = b;
+                }
+                else if (datos.Contains("etiqueta3"))
+                {
+                    string b = datos.Replace("etiqueta3", "");
+                    label3.Text = b;
+                }
+                else if (datos.Contains("etiqueta4"))
+                {
+                    string b = datos.Replace("etiqueta4", "");
+                    label4.Text = b;
+                }
+                else if (datos.Contains("mostrarNombreBoton"))
+                {
                 }
                 else if (datos != "")
                 {
                     // MessageBox.Show(datos);
-                    string[] datosSeparados;
+                    /*string[] datosSeparados;
                     try
                     {
                         if (Controlador1.serial.IsOpen)
@@ -256,9 +368,14 @@ namespace PolSerial
                     catch
                     {
 
-                    }
+                    }*/
 
                 }
+            }
+            else
+            {
+                zeroitSwitchThematic2.Checked = false;
+                zeroitSwitchThematic2.Enabled = false;
             }
         }
         /*
@@ -285,6 +402,29 @@ namespace PolSerial
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             obtenerPuertos();
+        }
+        /*
+         *Este metodo es para cambiar el estado de la conexion
+         */
+        private void zeroitSwitchThematic2_Click(object sender, EventArgs e)
+        {
+            if (Controlador1.serial.IsOpen)
+            {
+                Controlador1.serial.Close();
+                zeroitSwitchThematic2.Enabled = false;
+                //MessageBox.Show("Puerto Desconectado");
+            }
+            {
+                zeroitSwitchThematic2.Checked = false;
+                zeroitSwitchThematic2.Enabled = false;
+            }
+        }
+        /*
+         * Este es el link para contactar al creador 
+         */
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.instagram.com/paul_s4ntana/");
         }
 
         /*

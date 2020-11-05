@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.ventanaInicio = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -44,6 +48,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.VentanaConfiguracion = new System.Windows.Forms.TabPage();
+            this.zeroitSwitchThematic2 = new Zeroit.Framework.SwitchThematic.Controls.ZeroitSwitchThematic();
+            this.label12 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.zeroitSwitchThematic1 = new Zeroit.Framework.SwitchThematic.Controls.ZeroitSwitchThematic();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -57,10 +63,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
             this.ventanaInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -113,6 +116,54 @@
             this.ventanaInicio.Size = new System.Drawing.Size(652, 407);
             this.ventanaInicio.TabIndex = 0;
             this.ventanaInicio.Text = "inicio";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label11.Location = new System.Drawing.Point(539, 166);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(67, 29);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "Led4";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label10.Location = new System.Drawing.Point(539, 131);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(67, 29);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "Led3";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label9.Location = new System.Drawing.Point(539, 95);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 29);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Led2";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Location = new System.Drawing.Point(539, 59);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 29);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Led1";
             // 
             // pictureBox8
             // 
@@ -264,6 +315,9 @@
             // 
             // VentanaConfiguracion
             // 
+            this.VentanaConfiguracion.Controls.Add(this.linkLabel1);
+            this.VentanaConfiguracion.Controls.Add(this.zeroitSwitchThematic2);
+            this.VentanaConfiguracion.Controls.Add(this.label12);
             this.VentanaConfiguracion.Controls.Add(this.pictureBox4);
             this.VentanaConfiguracion.Controls.Add(this.zeroitSwitchThematic1);
             this.VentanaConfiguracion.Controls.Add(this.comboBox2);
@@ -278,6 +332,40 @@
             this.VentanaConfiguracion.TabIndex = 1;
             this.VentanaConfiguracion.Text = "v";
             this.VentanaConfiguracion.UseVisualStyleBackColor = true;
+            // 
+            // zeroitSwitchThematic2
+            // 
+            this.zeroitSwitchThematic2.AmbianceToggleType = Zeroit.Framework.SwitchThematic.Controls.ZeroitSwitchThematic.AmbianceType.OnOff;
+            this.zeroitSwitchThematic2.BaseColour = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.zeroitSwitchThematic2.BorderColour = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.zeroitSwitchThematic2.Checked = false;
+            this.zeroitSwitchThematic2.Enabled = false;
+            this.zeroitSwitchThematic2.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+            this.zeroitSwitchThematic2.Location = new System.Drawing.Point(527, 101);
+            this.zeroitSwitchThematic2.MonoType = Zeroit.Framework.SwitchThematic.Controls.ZeroitSwitchThematic.MonoMonoTypes.CheckMark;
+            this.zeroitSwitchThematic2.Name = "zeroitSwitchThematic2";
+            this.zeroitSwitchThematic2.NonToggledTextColourderColour = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.zeroitSwitchThematic2.Options = Zeroit.Framework.SwitchThematic.Controls.ZeroitSwitchThematic._Options.Style1;
+            this.zeroitSwitchThematic2.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.None;
+            this.zeroitSwitchThematic2.Size = new System.Drawing.Size(79, 27);
+            this.zeroitSwitchThematic2.Smoothing = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.zeroitSwitchThematic2.SwitchStyle = Zeroit.Framework.SwitchThematic.Controls.SwitchStyles.Ambiance;
+            this.zeroitSwitchThematic2.TabIndex = 7;
+            this.zeroitSwitchThematic2.Text = "zeroitSwitchThematic2";
+            this.zeroitSwitchThematic2.TextColour = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.zeroitSwitchThematic2.TextRendering = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.zeroitSwitchThematic2.ToggledColour = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(119)))), ((int)(((byte)(151)))));
+            this.zeroitSwitchThematic2.Click += new System.EventHandler(this.zeroitSwitchThematic2_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(429, 104);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(97, 24);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Conexion:";
             // 
             // pictureBox4
             // 
@@ -438,53 +526,21 @@
             this.timer1.Interval = 20;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label8
+            // linkLabel1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(539, 59);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 29);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "Led1";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(539, 95);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 29);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Led2";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label10.Location = new System.Drawing.Point(539, 131);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(67, 29);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "Led3";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label11.Location = new System.Drawing.Point(539, 166);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(67, 29);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "Led4";
+            this.linkLabel1.ActiveLinkColor = System.Drawing.SystemColors.MenuHighlight;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.linkLabel1.Location = new System.Drawing.Point(10, 369);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(146, 24);
+            this.linkLabel1.TabIndex = 8;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "By:Paul Santana";
+            this.toolTip1.SetToolTip(this.linkLabel1, "Contactar al Creador");
+            this.linkLabel1.VisitedLinkColor = System.Drawing.SystemColors.Highlight;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Form1
             // 
@@ -549,6 +605,9 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private Zeroit.Framework.SwitchThematic.Controls.ZeroitSwitchThematic zeroitSwitchThematic2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 
