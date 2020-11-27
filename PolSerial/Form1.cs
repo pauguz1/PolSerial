@@ -18,6 +18,7 @@ namespace PolSerial
         {
             InitializeComponent();
             obtenerPuertos();
+
             if (Properties.Settings.Default["modoOscuro"].ToString() == "true")
             {
                 modoOscuro(true);
@@ -30,9 +31,38 @@ namespace PolSerial
             }
         }
         /*
-         * Este metodo Muestra la lista de Puertos COM disponibles
-         * y Muestra la velocidad Serial que se quedo configurada en la ultima Sesion 
+         * Este metodo envia un mensaje advirtiendo que se presiono 2 veces el boton 4
          */
+        private async void Button4_DoubleClick(object sender, EventArgs e)
+        {
+            if (Controlador1.serial.IsOpen)
+            {
+                if (await Controlador1.enviarDato("btn4clickdoble"))
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("el mensaje no fue enviado");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debes seleccionar un puerto");
+                validarConexionSerial();
+            }
+        }
+
+       
+
+        
+
+
+
+        /*
+* Este metodo Muestra la lista de Puertos COM disponibles
+* y Muestra la velocidad Serial que se quedo configurada en la ultima Sesion 
+*/
         async void obtenerPuertos()
         {
             comboBox1.Items.Clear();
@@ -131,6 +161,7 @@ namespace PolSerial
             {
                 tabControl1.SelectedTab = ventanaInicio;
                 validarConexionSerial();
+                timer1.Enabled = true;
                 await Controlador1.enviarDato("mostrarNombreBoton");
                 MessageBox.Show("Puerto Seleciconado correctamente");
             }

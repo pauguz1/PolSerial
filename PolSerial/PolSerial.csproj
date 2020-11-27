@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>PolSerial3.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -120,6 +123,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icon_CircleWhite35px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ardilla.ico" />
+    <Content Include="PolSerial.ico" />
+    <Content Include="PolSerial1.ico" />
+    <Content Include="PolSerial2.ico" />
+    <Content Include="PolSerial3.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

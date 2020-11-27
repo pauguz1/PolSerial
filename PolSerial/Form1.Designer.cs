@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.ventanaInicio = new System.Windows.Forms.TabPage();
             this.label11 = new System.Windows.Forms.Label();
@@ -48,6 +49,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.VentanaConfiguracion = new System.Windows.Forms.TabPage();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.zeroitSwitchThematic2 = new Zeroit.Framework.SwitchThematic.Controls.ZeroitSwitchThematic();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -63,7 +65,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
             this.ventanaInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -333,6 +334,22 @@
             this.VentanaConfiguracion.Text = "v";
             this.VentanaConfiguracion.UseVisualStyleBackColor = true;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.SystemColors.MenuHighlight;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.linkLabel1.Location = new System.Drawing.Point(10, 369);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(146, 24);
+            this.linkLabel1.TabIndex = 8;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "By:Paul Santana";
+            this.toolTip1.SetToolTip(this.linkLabel1, "Contactar al Creador");
+            this.linkLabel1.VisitedLinkColor = System.Drawing.SystemColors.Highlight;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // zeroitSwitchThematic2
             // 
             this.zeroitSwitchThematic2.AmbianceToggleType = Zeroit.Framework.SwitchThematic.Controls.ZeroitSwitchThematic.AmbianceType.OnOff;
@@ -522,25 +539,8 @@
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
             this.timer1.Interval = 20;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.SystemColors.MenuHighlight;
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.linkLabel1.Location = new System.Drawing.Point(10, 369);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(146, 24);
-            this.linkLabel1.TabIndex = 8;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "By:Paul Santana";
-            this.toolTip1.SetToolTip(this.linkLabel1, "Contactar al Creador");
-            this.linkLabel1.VisitedLinkColor = System.Drawing.SystemColors.Highlight;
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Form1
             // 
@@ -550,9 +550,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "PolSerial";
             this.tabControl1.ResumeLayout(false);
             this.ventanaInicio.ResumeLayout(false);
             this.ventanaInicio.PerformLayout();
